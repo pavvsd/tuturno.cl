@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'Courier';
+    src: url('/src/static/font/Courier_New_Bold.ttf');
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'socafe-4nz5x';
+    src: url('/src/static/font/socafe-4nz5x.otf');
+    font-weight: bold;
+    font-style: bold;
+}
+
+/* 
+colores
+lila: #780c67
+amarillo: #f4c135
+naranja: #f76116
+blanco: #edede5
+
+*/
+.negro {
+    background-color: #000;
+}
+
+.lila {
+    background-color: #780c67;
+}
+
+.amarillo {
+    background-color: #f4c135;
+}
+
+.naranja {
+    background-color: #f76116;
+}
+
+
+
+th {
+    background-color: #f76116 !important;
+    color: #780c67 !important;
+} 
+
+td {
+    background-color: #edede5 !important;
+    color: #780c67 !important;
+} 
+
+
+
+body {
+    font-family: 'Courier';
+}
+
+
+.navbar_color {
+    background-color: #edede5 !important;
+}
+
+.btn_input_pri{
+    background-color: #edede5;
+    border: 2x solid #000;
+}
+
+.btn_input_sec{
+    background-color: #edede5;
+    border: 2x solid #000;
+}
+
+.btn_input_third{
+    background-color: #edede5;
+    border: 2x solid #000;
+}
+
+
+p{
+    font-family: 'Courier';
+}
+
+h1,
+h2,
+h3, 
+h4,
+h5 {
+    font-family: 'socafe-4nz5x';
+    font-weight: bold;
+}
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+nav {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    box-sizing: border-box;
+}
+
+.logo{
+    flex-basis: 100px;
+    height: 140px;
+    width: 140px;
+    object-fit: contain;
+}
+
