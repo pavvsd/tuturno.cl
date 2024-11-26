@@ -1,10 +1,8 @@
 from pymongo.mongo_client import MongoClient
-
-# Configura url del server mongo
-uri = "mongodb+srv://tuturno:admin@cluster0.ltinoxz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+from env import *
 
 # crear el cliente para conectar a la base de datos
-client = MongoClient(uri)
+client = MongoClient(uri_bd)
 
 # Obtiene la base de datos desde el cliente y lo almacena en la variable mydb
 mydb = client["tuTurno"]
