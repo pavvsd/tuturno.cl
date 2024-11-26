@@ -10,7 +10,7 @@
     <title>Cafetería Tu Turno - Menú</title>
 </head>
 
-<body class="naranja">
+<body class="amarillo">
     <nav class="navbar navbar-expand-lg navbar_color">
         <div class="container-fluid">
             <a href="{{ url_for('home') }}">
@@ -60,13 +60,13 @@
                 <div class="col">
 
                     <div class="card ">
-                        <img src="{{ url_for('static', filename = 'img/productos/' + producto.3 )}}" class="card-img-top">
+                        <img src="{{ url_for('static', filename = 'img/productos/' + producto.foto_producto )}}" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">{{producto.0}}</h5>
-                            <p class="card-text">$ {{producto.1}}</p>
+                            <h5 class="card-title">{{producto.nombre_producto}}</h5>
+                            <p class="card-text">$ {{producto.valor_producto}}</p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-body-secondary">{{producto.2}}</small>
+                            <small class="text-body-secondary">{{producto.descripcion_producto}}</small>
                         </div>
                     </div>
                 </div>

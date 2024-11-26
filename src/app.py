@@ -1,49 +1,74 @@
 from flask import Flask, render_template
-from flask_mysqldb import MySQL
+from model import connection
 
+# Intancia de la app
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'admin'
-app.config['MYSQL_DB'] = 'tuTurno'
+def creaListaProductos(productosCol, myquery):
+    productos = []
+    for doc in productosCol.find(myquery):
+            productos.append({
+                'nombre_producto': doc['nombre_producto'],
+                'valor_producto': doc['valor_producto'],
+                'descripcion_producto': doc['descripcion_producto'],
+                'foto_producto': doc['foto_producto']
+            })
+    return productos
 
-mysql = MySQL(app)
 
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
+
+
 @app.route('/menu/<elemento>', methods = ['POST', 'GET'])
 def menu(elemento):
-    if str(elemento) == 'cafeteria':
-        cur = mysql.connection.cursor()
-        cur.execute('SELECT nombre_producto, precio_producto, descripcion_producto, imagen_producto FROM productos WHERE tipo_producto = "cafeteria"')
-        lista = cur.fetchall()
-        print(lista)
-        return render_template('menu.html', cafeteria = lista)
-    elif str(elemento) == 'bebestible':
-        cur = mysql.connection.cursor()
-        cur.execute('SELECT nombre_producto, precio_producto, descripcion_producto, imagen_producto FROM productos WHERE tipo_producto = "bebestible"')
-        lista = cur.fetchall()
-        print(lista)
-        return render_template('menu.html', cafeteria = lista)
-    elif str(elemento) == 'pasteleria':
-        cur = mysql.connection.cursor()
-        cur.execute('SELECT nombre_producto, precio_producto, descripcion_producto, imagen_producto FROM productos WHERE tipo_producto = "pasteleria"')
-        lista = cur.fetchall()
-        print(lista)
-        return render_template('menu.html', cafeteria = lista)
-    return render_template('menu.html')
+    productosCol = connection.miColeccionProductos
+
+    if str(elemento) == 'bebestible':
+        myquery = { "tipo_producto" : "Bebestible" }
+
+        productos = creaListaProductos(productosCol, myquery)
+
+        return render_template('menu.html', cafeteria = productos)
     
+    elif str(elemento) == 'pasteleria':
+        myquery = { "tipo_producto" : "Pasteleria" }
+
+        productos = creaListaProductos(productosCol, myquery)
+
+        return render_template('menu.html', cafeteria = productos)
+    else:
+        myquery = { "tipo_producto" : "Cafeteria" }
+
+        productos = creaListaProductos(productosCol, myquery)
+    
+    return render_template('menu.html', cafeteria = productos)
+    
+
+
+@app.route('/menu')
+def menu2():
+    return render_template('index.html')
+
+
+
+
 @app.route('/ludoteca')
 def ludoteca():
-    cur = mysql.connection.cursor()
-    cur.execute('SELECT nombre_juego, jugadores_juego, edad_juego FROM juegos')
-    lista = cur.fetchall()
+    juegosCol = connection.miColeccionJuegos
+    juegos = []
+    for doc in juegosCol.find().sort("nombre_juego"):
+        juegos.append({
+            'nombre_juego': doc['nombre_juego'],
+            'jugadores_juego': doc['jugadores_juego'],
+            'edad_juego': doc['edad_juego']
+        })
+    return render_template('ludoteca.html', juegos = juegos)
 
-    return render_template('ludoteca.html', juegos = lista)
+
 
 @app.route('/ubicacion')
 def ubicacion():
