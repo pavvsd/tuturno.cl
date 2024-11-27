@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from model import connection
 
+
 # Intancia de la app
 app = Flask(__name__)
 
@@ -16,11 +17,9 @@ def creaListaProductos(productosCol, myquery):
     return productos
 
 
-
 @app.route('/')
 def home():
     return render_template('index.html')
-
 
 
 @app.route('/menu/<elemento>', methods = ['POST', 'GET'])
@@ -51,9 +50,7 @@ def menu(elemento):
 
 @app.route('/menu')
 def menu2():
-    return render_template('index.html')
-
-
+    return menu('cafeteria')
 
 
 @app.route('/ludoteca')
@@ -73,8 +70,6 @@ def ludoteca():
 @app.route('/ubicacion')
 def ubicacion():
     return render_template('ubicacion.html')
-
-
 
 
 
