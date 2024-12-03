@@ -16,7 +16,6 @@ def creaListaProductos(productosCol, myquery):
             })
     return productos
 
-
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -43,6 +42,7 @@ def menu(elemento):
         myquery = { "tipo_producto" : "Cafeteria" }
 
         productos = creaListaProductos(productosCol, myquery)
+
     
     return render_template('menu.html', cafeteria = productos)
     
@@ -70,6 +70,7 @@ def ludoteca():
 @app.route('/ubicacion')
 def ubicacion():
     return render_template('ubicacion.html')
+
 
 
 

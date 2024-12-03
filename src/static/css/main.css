@@ -1,15 +1,65 @@
 @font-face {
+    font-family: 'Socafe Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Socafe Regular'), url('../font/Socafe-4nZ5x.woff') format('woff');
+    }
+
+h1,
+h2,
+h3,
+h4,
+h5{
+    font-family: "Socafe Regular" !important;
+}
+
+@font-face {
     font-family: 'Courier';
-    src: url('/src/static/font/Courier_New_Bold.ttf');
+    src: url('../font/Courier_New_Bold.ttf');
     font-weight: bold;
     font-style: bold;
 }
 
-@font-face {
-    font-family: 'socafe-4nz5x';
-    src: url('/src/static/font/socafe-4nz5x.otf');
-    font-weight: bold;
-    font-style: bold;
+body {
+    background-image: url('../logo/Logo_Blanco.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 550px;
+    background-position-y: -350px;
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box
+}
+
+:root {
+    --max: 18rem
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%
+}
+
+.card {
+    width: var(--max)
+}
+
+.card-img-top {
+    width: 100%;
+    max-width: var(--max);
+    height: calc(var(--max));
+    object-fit: cover;
+}
+
+p, a, small{
+    font-family: 'Courier';
+}
+
+body{
+    background-color: #f4c135
 }
 
 /* 
@@ -20,21 +70,6 @@ naranja: #f76116
 blanco: #edede5
 
 */
-.negro {
-    background-color: #000;
-}
-
-.lila {
-    background-color: #780c67;
-}
-
-.amarillo {
-    background-color: #f4c135;
-}
-
-.naranja {
-    background-color: #f76116;
-}
 
 
 
@@ -49,10 +84,6 @@ td {
 } 
 
 
-
-body {
-    font-family: 'Courier';
-}
 
 
 .navbar_color {
@@ -75,18 +106,6 @@ body {
 }
 
 
-p{
-    font-family: 'Courier';
-}
-
-h1,
-h2,
-h3, 
-h4,
-h5 {
-    font-family: 'socafe-4nz5x';
-    font-weight: bold;
-}
 
 .map-responsive {
     overflow: hidden;

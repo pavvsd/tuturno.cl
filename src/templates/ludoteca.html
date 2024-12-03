@@ -10,7 +10,7 @@
 
 </head>
 
-<body class="amarillo">
+<body>
 
     <nav class="navbar navbar-expand-lg navbar_color">
         <div class="container-fluid">
@@ -39,18 +39,16 @@
         </div>
     </nav>
 
-    <div class="container text-center">
-        <h1>Cafeteria Tu Turno</h1>
+    <div class="container text-center p-3">
+        <h1 class="display-1 fw-bold">Cafeteria Tu Turno</h1>
     </div>
 
     <main>
 
-        <div class="container py-4">
+        <div class="container">
 
-            
-
-            <div class="container py-4 px-3 mx-auto">
-                <h2>Ludoteca</h2>
+            <div class="container px-3 mx-auto">
+                <h2 class="display-5 fw-bold">Ludoteca</h2>
             </div>
 
 
@@ -59,10 +57,10 @@
                 <table id="itemsTable" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col" >Nombre</th>
-                            <th scope="col" >Cantidad Jugadores</th>
-                            <th scope="col" >Edad Recomendada</th>
+                            <th scope="col"><p>#</p></th>
+                            <th scope="col" ><p>Nombre</p></th>
+                            <th scope="col" ><p>Cantidad Jugadores</p></th>
+                            <th scope="col" ><p>Edad Recomendada</p></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -70,10 +68,10 @@
                         {% for juego in juegos %}
                         {% set count.c = count.c + 1 %}
                         <tr>
-                            <th scope="row">{{count.c}}</th>
-                            <td>{{juego.nombre_juego}}</td>
-                            <td>{{juego.jugadores_juego}}</td>
-                            <td>{{juego.edad_juego}}</td>
+                            <th scope="row"><p>{{count.c}}</p></th>
+                            <td><p class="user-select-none">{{juego.nombre_juego}}</p></td>
+                            <td><p class="user-select-none">{{juego.jugadores_juego}}</p></td>
+                            <td><p class="user-select-none">{{juego.edad_juego}}</p></td>
                         </tr>
                         {% endfor %}
                     </tbody>
