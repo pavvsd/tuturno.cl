@@ -138,3 +138,8 @@ nav {
     object-fit: contain;
 }
 
+.imagen-pricipal{
+    flex-basis: 100px;
+    height: 240px;
+    object-fit: contain;
+}
