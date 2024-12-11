@@ -2,64 +2,63 @@
 
 {% block content %}
 
-    <main>
-        <div class="container py-4">
+    <div class="container py-4">
 
-            <div class="p-2 mb-2">
-                {% include "slide.html" %}
+        <div class="p-2 mb-2">
+            {% include "slide.html" %}
+        </div>
+        
+        <div class="p-5 mb-2 bg-body-tertiary rounded-3 border opacity-75 shadow-lg ">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Actividades Semanales</h1>
+                <p class="col-md-8 fs-4 text-black bg-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum libero
+                    dolorem laborum dolores, sint ducimus? Id excepturi aliquam voluptatibus et, velit, totam
+                    maiores voluptatem iure quod earum, atque accusamus magni.</p>
             </div>
-            
-            <div class="p-5 mb-2 bg-body-tertiary rounded-3 border opacity-75 shadow-lg ">
-                <div class="container-fluid py-5">
-                    <h1 class="display-5 fw-bold">Actividades Semanales</h1>
-                    <p class="col-md-8 fs-4 text-black bg-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum libero
-                        dolorem laborum dolores, sint ducimus? Id excepturi aliquam voluptatibus et, velit, totam
-                        maiores voluptatem iure quod earum, atque accusamus magni.</p>
+        </div>
+
+        <div class="row align-items-md-stretch p-4">
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-bg-dark rounded-3 shadow-lg">
+                    <h2>Café de Especialidad</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam distinctio repellat inventore
+                        quae at harum vitae error tempora qui hic quis adipisci labore ipsam similique cumque unde,
+                        perferendis accusantium? Eveniet!</p>
                 </div>
             </div>
 
-            <div class="row align-items-md-stretch p-4">
-                <div class="col-md-6">
-                    <div class="h-100 p-5 text-bg-dark rounded-3 shadow-lg">
-                        <h2>Café de Especialidad</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam distinctio repellat inventore
-                            quae at harum vitae error tempora qui hic quis adipisci labore ipsam similique cumque unde,
-                            perferendis accusantium? Eveniet!</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-body-tertiary border rounded-3 shadow-lg">
-                        <h2>Visita nuestra Ludoteca</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam est harum asperiores obcaecati
-                            neque provident dignissimos quaerat modi, earum, ad commodi sint deserunt reiciendis
-                            ratione. Eligendi recusandae consequuntur impedit esse?</p>
-                        <a href="{{ url_for('ludoteca') }}">
-                            <button class="btn btn-outline-secondary" type="button">Ludoteca</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-5 mb-4 bg-body-tertiary rounded-3 border opacity-75 shadow-lg ">
-                <div class="container-fluid py-5">
-                    <h1 class="display-5 fw-bold">Horarios</h1>
-                    <p class="col-md-8 fs-4 text-black bg-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum libero
-                        dolorem laborum dolores, sint ducimus? Id excepturi aliquam voluptatibus et, velit, totam
-                        maiores voluptatem iure quod earum, atque accusamus magni.</p>
-                </div>
-            </div>
-
-            <div class="p-5 mb-4 bg-body-tertiary rounded-3 border opacity-75 shadow-lg ">
-                <div class="container-fluid py-5">
-                    <h1 class="display-5 fw-bold">Ubicación</h1>
-                    <p class="col-md-8 fs-4 text-black bg-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum libero
-                        dolorem laborum dolores, sint ducimus? Id excepturi aliquam voluptatibus et, velit, totam
-                        maiores voluptatem iure quod earum, atque accusamus magni.</p>
-                    <a href="{{ url_for('ubicacion') }}">
-                        <button class="btn btn-primary btn-lg" type="button">Ubicación</button>
+            <div class="col-md-6">
+                <div class="h-100 p-5 bg-body-tertiary border rounded-3 shadow-lg">
+                    <h2>Visita nuestra Ludoteca</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam est harum asperiores obcaecati
+                        neque provident dignissimos quaerat modi, earum, ad commodi sint deserunt reiciendis
+                        ratione. Eligendi recusandae consequuntur impedit esse?</p>
+                    <a href="{{ url_for('tuturno.ludoteca') }}">
+                        <button class="btn btn-outline-secondary" type="button">Ludoteca</button>
                     </a>
                 </div>
             </div>
+        </div>
+
+        <div class="p-5 mb-4 bg-body-tertiary rounded-3 border opacity-75 shadow-lg ">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Horarios</h1>
+                <p class="col-md-8 fs-4 text-black bg-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum libero
+                    dolorem laborum dolores, sint ducimus? Id excepturi aliquam voluptatibus et, velit, totam
+                    maiores voluptatem iure quod earum, atque accusamus magni.</p>
+            </div>
+        </div>
+
+        <div class="p-5 mb-4 bg-body-tertiary rounded-3 border opacity-75 shadow-lg ">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Ubicación</h1>
+                <p class="col-md-8 fs-4 text-black bg-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum libero
+                    dolorem laborum dolores, sint ducimus? Id excepturi aliquam voluptatibus et, velit, totam
+                    maiores voluptatem iure quod earum, atque accusamus magni.</p>
+                <a href="{{ url_for('tuturno.ubicacion') }}">
+                    <button class="btn btn-primary btn-lg" type="button">Ubicación</button>
+                </a>
+            </div>
+        </div>
 
 {% endblock %}

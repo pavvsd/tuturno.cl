@@ -39,15 +39,15 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {% if pagina == 'menu' %} active {% endif %}" aria-current="page"
-                            href="{{ url_for('menu', elemento='cafeteria') }}">Menú</a>
+                            href="{{ url_for('tuturno.menu', elemento='cafeteria') }}">Menú</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if pagina == 'ludoteca' %} active {% endif %}" aria-current="page"
-                            href="{{ url_for('ludoteca') }}">Ludoteca</a>
+                            href="{{ url_for('tuturno.ludoteca') }}">Ludoteca</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if pagina == 'ubicacion' %} active {% endif %}" aria-current="page"
-                            href="{{ url_for('ubicacion') }}">Ubicación</a>
+                            href="{{ url_for('tuturno.ubicacion') }}">Ubicación</a>
                     </li>
                 </ul>
             </div>
@@ -67,6 +67,8 @@
             {% endif %}">
     </div>
 
+    <main>
+        
     {% block content %}
 
     {% endblock %}
@@ -75,11 +77,11 @@
         <p class="col-md-4 mb-0 text-body-secondary">&copy; Cafetería Tu Turno</p>
 
         <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="{{ url_for('menu', elemento='cafeteria') }}"
+            <li class="nav-item"><a href="{{ url_for('tuturno.menu', elemento='cafeteria') }}"
                     class="nav-link px-2 text-body-secondary">Menú</a></li>
-            <li class="nav-item"><a href="{{ url_for('ludoteca') }}"
+            <li class="nav-item"><a href="{{ url_for('tuturno.ludoteca') }}"
                     class="nav-link px-2 text-body-secondary">Ludoteca</a></li>
-            <li class="nav-item"><a href="{{ url_for('ubicacion') }}"
+            <li class="nav-item"><a href="{{ url_for('tuturno.ubicacion') }}"
                     class="nav-link px-2 text-body-secondary">Ubicación</a>
             </li>
             <li class="nav-item"><a href="https://www.instagram.com/tuturno.cl/?hl=es"
